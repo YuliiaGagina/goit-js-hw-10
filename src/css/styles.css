@@ -39,6 +39,7 @@ ul{
   margin-right: 30px;
 }
 
+
 .country-info{
   
   opacity: 0;
@@ -50,8 +51,3 @@ ul{
 }
 
 
-.country-info-new{
-  
-  opacity: 1;
-  transition: opacity 1s linear;
-}
