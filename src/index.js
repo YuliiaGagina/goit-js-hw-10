@@ -25,6 +25,7 @@ const onSearchInput = e => {
   countryApi
     .fetchCountries(countries)
     .then(data => {
+        console.log(data);
       if (data.status == '404') {
         Notiflix.Notify.failure('Oops, there is no country with that name');
       } else if (data.length >= 10) {
@@ -61,12 +62,13 @@ function renderMurkup(countries) {
 }
 
 function renderDataAboutCountry(countries) {
+    
   const datamarkup = countries
-    .map(country => {
+    .map(({capital, languages, population}) => {
       return `<ul class="list-information">
-        <li class="list-information-item">Capital: ${country.capital} </li>
-        <li class="list-information-item">Languages: ${country.language} </li>
-        <li class="list-information-item">Population: ${country.population} </li>
+        <li class="list-information-item">Capital: ${capital} </li>
+        <li class="list-information-item">Languages: ${languages} </li>
+        <li class="list-information-item">Population: ${population} </li>
         </ul>`;
     })
     .join('');
