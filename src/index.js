@@ -67,7 +67,7 @@ function renderDataAboutCountry(countries) {
     .map(({capital, languages, population}) => {
       return `<ul class="list-information">
         <li class="list-information-item">Capital: ${capital} </li>
-        <li class="list-information-item">Languages: ${languages} </li>
+        <li class="list-information-item">Languages: ${Object.values(languages).join(', ')} </li>
         <li class="list-information-item">Population: ${population} </li>
         </ul>`;
     })
